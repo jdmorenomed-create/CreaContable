@@ -1,0 +1,436 @@
+/* Tema global claro/oscuro de CreaContable */
+:root { color-scheme: light; }
+body.theme-light { color-scheme: light; }
+body.theme-dark { color-scheme: dark; background:#10141c !important; color:#e8edf5 !important; }
+body.theme-dark .navbar, body.theme-dark .foro-nav { background:#151b26 !important; color:#edf2fa !important; border-color:#30394a !important; }
+body.theme-dark .card, body.theme-dark .auth-container, body.theme-dark .dashboard-container,
+body.theme-dark .section-box, body.theme-dark .foro-card, body.theme-dark .foro-topic,
+body.theme-dark .foro-search, body.theme-dark .foro-comment { background:#1a2230 !important; color:#e8edf5 !important; border-color:#344054 !important; }
+body.theme-dark input, body.theme-dark select, body.theme-dark textarea { background:#111722 !important; color:#f3f6fb !important; border-color:#465268 !important; }
+body.theme-dark label, body.theme-dark p, body.theme-dark li, body.theme-dark td, body.theme-dark th { color:inherit; }
+body.theme-dark a:not(.btn-primary):not(.btn-hero) { color:#9fc2ff; }
+body.theme-dark .hero { background:linear-gradient(135deg,#153c78 0%,#102b55 100%) !important; }
+body.theme-dark .btn-secondary { color:#b7d2ff !important; border-color:#5d8ee8 !important; }
+body.theme-dark .alert-error { background:#4b252b !important; color:#ffd9dd !important; }
+body.theme-dark .alert-success { background:#173d30 !important; color:#c4f5dc !important; }
+/* Foro: sus estilos originales usan colores fijos, por eso se adaptan aquí. */
+body.theme-light { --foro-bg:#f4f7fb; --foro-card:#ffffff; --foro-border:#dce3ed; --foro-text:#202938; --foro-muted:#64748b; --foro-gold:#d97706; --foro-blue:#2563eb; background:#f4f7fb !important; color:#202938 !important; }
+body.theme-light .foro-nav { background:#ffffff !important; border-color:#dce3ed !important; }
+body.theme-light .foro-brand { color:#202938 !important; }
+body.theme-light .foro-link, body.theme-light .foro-button { background:#f8fafc !important; color:#243044 !important; border-color:#cbd5e1 !important; }
+body.theme-light .foro-button.primary { background:#f59e0b !important; color:#211606 !important; border-color:#d97706 !important; }
+body.theme-light .foro-hero { background:linear-gradient(120deg,#e7efff,#f8fafc) !important; border-color:#cad8f0 !important; }
+body.theme-light .foro-hero p { color:#475569 !important; }
+body.theme-light .foro-eyebrow { color:#a16207 !important; }
+body.theme-light .foro-field input, body.theme-light .foro-field select, body.theme-light .foro-field textarea,
+body.theme-light .foro-reply textarea, body.theme-light .foro-search input { background:#ffffff !important; color:#202938 !important; border-color:#cbd5e1 !important; }
+body.theme-light .foro-tag { background:#e8eef8 !important; color:#344563 !important; }
+body.theme-light .foro-comment { background:#f8fafc !important; border-color:#e2e8f0 !important; }
+body.theme-light .foro-alert.ok { background:#e8f8ef !important; border-color:#a8dfbd !important; color:#17623a !important; }
+body.theme-light .foro-alert.err { background:#fff0f0 !important; border-color:#f0b8b8 !important; color:#8c2424 !important; }
+.theme-toggle { position:fixed; z-index:99999; right:18px; bottom:18px; display:inline-flex; align-items:center; gap:8px; border:1px solid #64748b; border-radius:999px; padding:11px 15px; background:#172033; color:#fff; font:600 14px/1.1 'Segoe UI',Arial,sans-serif; box-shadow:0 8px 24px rgba(0,0,0,.22); cursor:pointer; transition:transform .15s,box-shadow .15s; }
+.theme-toggle:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.28); }
+body.theme-light .theme-toggle { background:#fff; color:#253247; border-color:#cbd5e1; }
+.theme-toggle:focus-visible { outline:3px solid #60a5fa; outline-offset:3px; }
+@media(max-width:520px){.theme-toggle{right:12px;bottom:12px;padding:10px 13px}}
+
+
+/* Armonización global: portada, paneles, banners principales y pantallas de chat */
+body.theme-light { background:#f4f7fb !important; color:#253247 !important; }
+body.theme-light .hero, body.theme-light .hero-banner, body.theme-light .banner,
+body.theme-light .page-banner, body.theme-light .welcome-banner, body.theme-light .dashboard-hero,
+body.theme-light [class*="hero-banner"], body.theme-light [class*="banner-principal"] {
+  background:linear-gradient(125deg,#e7efff 0%,#f8fafc 100%) !important;
+  color:#24344d !important; border-color:#d2deef !important;
+}
+body.theme-light .hero h1, body.theme-light .hero h2, body.theme-light .hero-banner h1,
+body.theme-light .hero-banner h2, body.theme-light .banner h1, body.theme-light .banner h2,
+body.theme-light .page-banner h1, body.theme-light .welcome-banner h1 { color:#24344d !important; }
+body.theme-light .hero p, body.theme-light .hero-banner p, body.theme-light .banner p,
+body.theme-light .page-banner p, body.theme-light .welcome-banner p { color:#52647c !important; }
+body.theme-light .chat-header, body.theme-light .chat-title, body.theme-light .chat-topbar {
+  background:linear-gradient(120deg,#e7efff,#f8fafc) !important; color:#24344d !important; border-color:#d2deef !important;
+}
+body.theme-light .chat-container, body.theme-light .chat-messages, body.theme-light .messages-container,
+body.theme-light .chat-body { background:#f5f8fc !important; color:#253247 !important; }
+body.theme-light .message, body.theme-light .chat-message, body.theme-light .message-received,
+body.theme-light .received-message { background:#fff !important; color:#253247 !important; border-color:#dce4ef !important; }
+body.theme-light .message-sent, body.theme-light .sent-message, body.theme-light .my-message {
+  background:#e2edff !important; color:#24344d !important; border-color:#c9dcfb !important;
+}
+body.theme-light .navbar, body.theme-light nav, body.theme-light .site-header, body.theme-light .main-header {
+  background:#fff !important; color:#24344d !important; border-color:#dce4ef !important;
+}
+body.theme-light .navbar a, body.theme-light nav a, body.theme-light .site-header a, body.theme-light .main-header a { color:#294567; }
+body.theme-light .card, body.theme-light .section-box, body.theme-light .dashboard-container,
+body.theme-light .auth-container, body.theme-light .content-card, body.theme-light .panel {
+  background:#fff !important; color:#253247 !important; border-color:#dce4ef !important;
+}
+body.theme-light input, body.theme-light select, body.theme-light textarea {
+  background:#fff !important; color:#253247 !important; border-color:#cbd5e1 !important;
+}
+body.theme-light input::placeholder, body.theme-light textarea::placeholder { color:#8491a5 !important; }
+body.theme-dark .hero, body.theme-dark .hero-banner, body.theme-dark .banner,
+body.theme-dark .page-banner, body.theme-dark .welcome-banner, body.theme-dark .dashboard-hero,
+body.theme-dark [class*="hero-banner"], body.theme-dark [class*="banner-principal"] {
+  background:linear-gradient(125deg,#17345a 0%,#172231 100%) !important;
+  color:#edf3fb !important; border-color:#344a68 !important;
+}
+body.theme-dark .hero h1, body.theme-dark .hero h2, body.theme-dark .hero-banner h1,
+body.theme-dark .hero-banner h2, body.theme-dark .banner h1, body.theme-dark .banner h2,
+body.theme-dark .page-banner h1, body.theme-dark .welcome-banner h1 { color:#f1f5fb !important; }
+body.theme-dark .hero p, body.theme-dark .hero-banner p, body.theme-dark .banner p,
+body.theme-dark .page-banner p, body.theme-dark .welcome-banner p { color:#d0dced !important; }
+body.theme-dark .chat-header, body.theme-dark .chat-title, body.theme-dark .chat-topbar {
+  background:linear-gradient(120deg,#1c3454,#192332) !important; color:#edf3fb !important; border-color:#344256 !important;
+}
+/* Si el logotipo se muestra como imagen, la variante clara evita letras negras duras. */
+body.theme-light img[src*="logo.png"] { filter:none !important; }
+
+/* Ajustes específicos de la portada y logotipo tipográfico del sitio */
+body.theme-light .logo-crea { color:#24344d !important; }
+body.theme-light .logo-contable { color:#b96b08 !important; }
+body.theme-light .logo-box { color:#24344d !important; }
+body.theme-light .hero-blue {
+  background:linear-gradient(125deg,#e6efff 0%,#f8fafc 100%) !important;
+  color:#24344d !important; border-color:#d2deef !important;
+}
+body.theme-light .hero-blue h1, body.theme-light .hero-blue h1 span { color:#24344d !important; }
+body.theme-light .hero-blue p { color:#52647c !important; }
+body.theme-dark .logo-crea { color:#f3f6fb !important; }
+body.theme-dark .logo-contable { color:#fbbf24 !important; }
+body.theme-dark .hero-blue { background:linear-gradient(125deg,#17345a 0%,#172231 100%) !important; color:#edf3fb !important; }
+body.theme-dark .hero-blue h1, body.theme-dark .hero-blue h1 span { color:#f1f5fb !important; }
+body.theme-dark .hero-blue p { color:#d0dced !important; }
+
+/* Tema unificado para TODAS las pantallas. Paleta clara inspirada en el foro:
+   fondo gris azulado, superficies blancas, azul marino y acento ámbar. */
+:root, html[data-theme="light"] { color-scheme: light; }
+html[data-theme="light"] {
+  --bg-color:#f4f7fb; --card-bg:#ffffff; --text-color:#253247; --subtext-color:#64748b;
+  --navbar-bg:#ffffff; --border-color:#dce4ef; --dropdown-bg:#ffffff; --profile-box-bg:#eef3fa;
+  --table-header-bg:#edf2f9; --hero-bg:#e7efff; --input-bg:#ffffff;
+}
+html[data-theme="dark"] { color-scheme: dark; }
+body.theme-light { background:#f4f7fb !important; color:#253247 !important; }
+body.theme-light .navbar, body.theme-light .foro-nav, body.theme-light .detalle-nav,
+body.theme-light .site-header, body.theme-light .main-header, body.theme-light header {
+  background:#ffffff !important; color:#253247 !important; border-color:#dce4ef !important;
+}
+body.theme-light .navbar a:not(.btn-primary):not(.btn-hero), body.theme-light .foro-nav a,
+body.theme-light .detalle-nav a, body.theme-light .site-header a, body.theme-light .main-header a { color:#294567; }
+body.theme-light .card, body.theme-light .foro-card, body.theme-light .foro-topic,
+body.theme-light .foro-search, body.theme-light .foro-comment, body.theme-light .chat-panel,
+body.theme-light .chat-compose, body.theme-light .chat-sidebar, body.theme-light .chat-main,
+body.theme-light .chat-main-area, body.theme-light .chat-container, body.theme-light .chat-layout,
+body.theme-light .auth-container, body.theme-light .dashboard-container, body.theme-light .section-box,
+body.theme-light .content-card, body.theme-light .panel, body.theme-light .profile-card,
+body.theme-light .dropdown-menu, body.theme-light .dropdown-content {
+  background:#ffffff !important; color:#253247 !important; border-color:#dce4ef !important;
+}
+body.theme-light .hero, body.theme-light .hero-blue, body.theme-light .hero-banner,
+body.theme-light .hero-banner *, body.theme-light .banner, body.theme-light .page-banner,
+body.theme-light .welcome-banner, body.theme-light .dashboard-hero,
+body.theme-light [class*="hero-banner"], body.theme-light [class*="banner-principal"] {
+  background:linear-gradient(125deg,#e7efff 0%,#f8fafc 100%) !important;
+  color:#24344d !important; border-color:#cad8f0 !important;
+}
+body.theme-light .hero h1, body.theme-light .hero h2, body.theme-light .hero h1 span,
+body.theme-light .hero-banner h1, body.theme-light .hero-banner h2, body.theme-light .hero-blue h1,
+body.theme-light .hero-blue h1 span, body.theme-light .banner h1, body.theme-light .page-banner h1,
+body.theme-light .welcome-banner h1 { color:#24344d !important; }
+body.theme-light .hero p, body.theme-light .hero-banner p, body.theme-light .hero-blue p,
+body.theme-light .banner p, body.theme-light .page-banner p, body.theme-light .welcome-banner p { color:#52647c !important; }
+body.theme-light input, body.theme-light select, body.theme-light textarea,
+body.theme-light .foro-field input, body.theme-light .foro-field select, body.theme-light .foro-field textarea,
+body.theme-light .foro-search input, body.theme-light .foro-search select,
+body.theme-light .chat-input, body.theme-light .chat-compose textarea {
+  background:#ffffff !important; color:#253247 !important; border-color:#cbd5e1 !important;
+}
+body.theme-light input::placeholder, body.theme-light textarea::placeholder { color:#8491a5 !important; }
+body.theme-light .foro-tag, body.theme-light .chat-category { background:#e8eef8 !important; color:#344563 !important; }
+body.theme-light .chat-messages, body.theme-light .chat-stream, body.theme-light .messages-container,
+body.theme-light .chat-body { background:#f4f7fb !important; color:#253247 !important; }
+body.theme-light .message, body.theme-light .chat-message, body.theme-light .message-received,
+body.theme-light .received-message, body.theme-light #chatMessages .message-bubble {
+  background:#ffffff !important; color:#253247 !important; border-color:#dce4ef !important;
+}
+body.theme-light .message-sent, body.theme-light .sent-message, body.theme-light .my-message,
+body.theme-light .chat-message.mine { background:#e2edff !important; color:#24344d !important; border-color:#c9dcfb !important; }
+body.theme-light .logo-crea, body.theme-light .logo-brand-text .logo-crea { color:#24344d !important; }
+body.theme-light .logo-contable { color:#b96b08 !important; }
+body.theme-light .logo-box, body.theme-light .logo-box * { color:#24344d !important; }
+body.theme-light .tab-btn:not(.active), body.theme-light .foro-link, body.theme-light .det-link {
+  background:#f8fafc !important; color:#294567 !important; border-color:#cbd5e1 !important;
+}
+body.theme-light .tab-btn.active, body.theme-light .btn-primary, body.theme-light .btn,
+body.theme-light .foro-button.primary, body.theme-light .chat-submit {
+  background:#f59e0b !important; color:#211606 !important; border-color:#d97706 !important;
+}
+body.theme-light .alert-error, body.theme-light .foro-alert.err { background:#fff0f0 !important; color:#8c2424 !important; border-color:#f0b8b8 !important; }
+body.theme-light .alert-success, body.theme-light .foro-alert.ok { background:#e8f8ef !important; color:#17623a !important; border-color:#a8dfbd !important; }
+body.theme-light table th { background:#edf2f9 !important; color:#253247 !important; }
+body.theme-light table td { color:#253247 !important; border-color:#dce4ef !important; }
+body.theme-dark .logo-crea { color:#f3f6fb !important; }
+body.theme-dark .logo-contable { color:#fbbf24 !important; }
+body.theme-dark .chat-submit { background:#f59e0b !important; color:#171717 !important; }
+
+/* Hero Sections unificadas: inicio, inicio de sesión y registro */
+body.theme-light .hero-blue {
+  background: linear-gradient(125deg, #e7efff 0%, #f8fafc 72%, #fff7e8 100%) !important;
+  border-bottom: 1px solid #cad8f0;
+  color: #24344d !important;
+}
+body.theme-light .hero-blue .badge-cert {
+  background: #ffffffb8 !important;
+  color: #8a5200 !important;
+  border-color: #e9c98c !important;
+}
+body.theme-light .hero-blue h1 span { color: #b96b08 !important; }
+body.theme-dark .hero-blue {
+  background: linear-gradient(125deg, #17345a 0%, #172231 72%, #29243a 100%) !important;
+  border-bottom: 1px solid #344a68;
+  color: #edf3fb !important;
+}
+body.theme-dark .hero-blue .badge-cert {
+  background: #ffffff12 !important;
+  color: #fbbf24 !important;
+  border-color: #64748b !important;
+}
+body.theme-dark .hero-blue h1 span { color: #fbbf24 !important; }
+
+/* En autenticación, las tarjetas funcionan como el hero de cada pantalla. */
+body.theme-light .login-container,
+body.theme-light .register-container {
+  background: radial-gradient(ellipse at top, #e8effc 0%, #f4f7fb 58%, #f4f7fb 100%) !important;
+}
+body.theme-light .login-card,
+body.theme-light .register-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%) !important;
+  color: #253247 !important;
+  border: 1px solid #cad8f0 !important;
+  border-top: 4px solid #f59e0b !important;
+  box-shadow: 0 22px 52px rgba(36, 52, 77, .13) !important;
+}
+body.theme-light .login-card h2,
+body.theme-light .register-card h2 { color: #243b5b !important; }
+body.theme-light .login-subtitle,
+body.theme-light .register-subtitle { color: #64748b !important; }
+body.theme-light .login-card .form-group label,
+body.theme-light .register-card .form-group label { color: #344563 !important; }
+body.theme-light .login-card .form-group input,
+body.theme-light .register-card .form-group input,
+body.theme-light .register-card .form-group select {
+  background: #ffffff !important;
+  color: #253247 !important;
+  border-color: #cbd8e8 !important;
+}
+body.theme-light .login-card .form-group input:focus,
+body.theme-light .register-card .form-group input:focus,
+body.theme-light .register-card .form-group select:focus {
+  border-color: #d97706 !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, .13) !important;
+}
+body.theme-light .login-card .register-link,
+body.theme-light .register-card .login-link { color: #64748b !important; }
+body.theme-light .login-card .register-link a,
+body.theme-light .register-card .login-link a { color: #a86108 !important; }
+
+body.theme-dark .login-container,
+body.theme-dark .register-container {
+  background: radial-gradient(ellipse at top, #172a45 0%, #10141c 62%, #10141c 100%) !important;
+}
+body.theme-dark .login-card,
+body.theme-dark .register-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1c2b40 0%, #151d2a 100%) !important;
+  color: #edf3fb !important;
+  border: 1px solid #344a68 !important;
+  border-top: 4px solid #f59e0b !important;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, .34) !important;
+}
+body.theme-dark .login-card h2,
+body.theme-dark .register-card h2 { color: #fbbf24 !important; }
+body.theme-dark .login-subtitle,
+body.theme-dark .register-subtitle { color: #c0ccdc !important; }
+body.theme-dark .login-card .form-group label,
+body.theme-dark .register-card .form-group label { color: #d0dced !important; }
+body.theme-dark .login-card .form-group input,
+body.theme-dark .register-card .form-group input,
+body.theme-dark .register-card .form-group select {
+  background: #111722 !important;
+  color: #f3f6fb !important;
+  border-color: #465268 !important;
+}
+body.theme-dark .login-card .form-group input:focus,
+body.theme-dark .register-card .form-group input:focus,
+body.theme-dark .register-card .form-group select:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, .14) !important;
+}
+body.theme-dark .login-card .register-link,
+body.theme-dark .register-card .login-link { color: #b8c4d6 !important; }
+body.theme-dark .login-card .register-link a,
+body.theme-dark .register-card .login-link a { color: #fbbf24 !important; }
+
+/* Encabezado de autenticación a juego con el hero en ambos temas. */
+body.theme-light .navbar {
+  background: #ffffff !important;
+  color: #24344d !important;
+  border-bottom-color: #dce4ef !important;
+  box-shadow: 0 4px 18px rgba(36, 52, 77, .06) !important;
+}
+body.theme-light .btn-volver { color: #294567 !important; }
+body.theme-dark .navbar {
+  background: #151b26 !important;
+  color: #edf3fb !important;
+  border-bottom-color: #30394a !important;
+}
+body.theme-dark .btn-volver { color: #c4d3e8 !important; }
+
+/* Corrección específica de la página de INICIO: adaptar también sus secciones internas
+   al mismo estilo claro del foro, no únicamente el hero principal. */
+body.theme-light:has(.hero-blue) {
+  background: #f4f7fb !important;
+  color: #253247 !important;
+}
+body.theme-light .hero-blue {
+  background: linear-gradient(125deg, #e7efff 0%, #f8fafc 72%, #fff7e8 100%) !important;
+  color: #24344d !important;
+  border-bottom: 1px solid #cad8f0 !important;
+}
+body.theme-light .hero-blue h1,
+body.theme-light .hero-blue h1 span { color: #24344d !important; }
+body.theme-light .hero-blue h1 span { color: #b96b08 !important; }
+body.theme-light .hero-blue p { color: #52647c !important; }
+body.theme-light .cuadro-card,
+body.theme-light .servicios-card,
+body.theme-light .seguridad-card,
+body.theme-light .plan-card,
+body.theme-light .team-card,
+body.theme-light .legal-section {
+  background: #ffffff !important;
+  color: #253247 !important;
+  border-color: #dce4ef !important;
+  box-shadow: 0 10px 28px rgba(36, 52, 77, .08) !important;
+}
+body.theme-light .cuadro-card h3,
+body.theme-light .servicios-card h2,
+body.theme-light .paso-paso-tag,
+body.theme-light .uvt-badge-info,
+body.theme-light .plan-precio { color: #a86108 !important; }
+body.theme-light .cuadro-card p,
+body.theme-light .servicios-card .subtitulo,
+body.theme-light .paso-paso-subtitle,
+body.theme-light .seguridad-subtitle,
+body.theme-light .seguridad-card p,
+body.theme-light .planes-header p,
+body.theme-light .legal-section p,
+body.theme-light .legal-section li,
+body.theme-light .site-footer { color: #64748b !important; }
+body.theme-light .paso-paso-title,
+body.theme-light .seguridad-title,
+body.theme-light .planes-header h2,
+body.theme-light .plan-nombre,
+body.theme-light .seguridad-card h3,
+body.theme-light .team-card h3,
+body.theme-light .legal-section h2,
+body.theme-light .legal-section h3 { color: #243b5b !important; }
+body.theme-light .servicios-item {
+  background: #f8fafc !important;
+  border-color: #dce4ef !important;
+  border-left-color: #f59e0b !important;
+}
+body.theme-light .servicios-item .nombre-servicio { color: #344563 !important; }
+body.theme-light .servicios-item .precio-uvt,
+body.theme-light .uvt-badge-info {
+  background: #fff7e8 !important;
+  border-color: #f2d4a0 !important;
+}
+body.theme-light .plan-card.popular {
+  background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%) !important;
+  border-color: #f0b34b !important;
+}
+body.theme-light .team-photo { background: #eef3fa !important; color: #64748b !important; border-color: #cbd8e8 !important; }
+body.theme-light .site-footer { border-top-color: #dce4ef !important; }
+body.theme-light .site-footer a { color: #a86108 !important; }
+body.theme-light .privacy-modal { background: #ffffff !important; color: #253247 !important; border-color: #dce4ef !important; }
+body.theme-light .privacy-modal h2 { color: #243b5b !important; }
+body.theme-light .privacy-modal p { color: #52647c !important; }
+body.theme-light .privacy-modal-close { color: #64748b !important; }
+
+/* El modo oscuro de inicio conserva el aspecto azul marino y ámbar. */
+body.theme-dark:has(.hero-blue) { background: #10141c !important; color: #e8edf5 !important; }
+body.theme-dark .hero-blue { background: linear-gradient(125deg, #17345a 0%, #172231 72%, #29243a 100%) !important; color: #edf3fb !important; }
+body.theme-dark .cuadro-card,
+body.theme-dark .servicios-card,
+body.theme-dark .seguridad-card,
+body.theme-dark .plan-card,
+body.theme-dark .team-card,
+body.theme-dark .legal-section { background: #1a2230 !important; color: #e8edf5 !important; border-color: #344054 !important; }
+body.theme-dark .cuadro-card h3,
+body.theme-dark .servicios-card h2,
+body.theme-dark .paso-paso-tag,
+body.theme-dark .plan-precio { color: #fbbf24 !important; }
+body.theme-dark .cuadro-card p,
+body.theme-dark .servicios-card .subtitulo,
+body.theme-dark .paso-paso-subtitle,
+body.theme-dark .seguridad-subtitle,
+body.theme-dark .seguridad-card p,
+body.theme-dark .planes-header p,
+body.theme-dark .legal-section p,
+body.theme-dark .legal-section li { color: #b8c4d6 !important; }
+body.theme-dark .paso-paso-title,
+body.theme-dark .seguridad-title,
+body.theme-dark .planes-header h2,
+body.theme-dark .plan-nombre,
+body.theme-dark .seguridad-card h3,
+body.theme-dark .team-card h3,
+body.theme-dark .legal-section h2,
+body.theme-dark .legal-section h3 { color: #edf3fb !important; }
+body.theme-dark .servicios-item { background: #111722 !important; border-color: #30394a !important; border-left-color: #f59e0b !important; }
+body.theme-dark .servicios-item .nombre-servicio { color: #e5e7eb !important; }
+body.theme-dark .site-footer { color: #b8c4d6 !important; border-top-color: #30394a !important; }
+
+/* CreaContable: ajustes de tema para Centro de Servicios, pagos y administración */
+body.theme-light .top, body.theme-light .nav:not(.navbar), body.theme-light .tabs,
+body.theme-light .notification-item, body.theme-light .subform {
+  background:#fff !important;color:#253247 !important;border-color:#dce4ef !important;
+}
+body.theme-light .brand, body.theme-light .hero h1, body.theme-light .panel h2,
+body.theme-light .panel h3, body.theme-light .card h3 { color:#243b5b !important; }
+body.theme-light .hero, body.theme-light .panel, body.theme-light .card,
+body.theme-light .grid>.card, body.theme-light .table-wrap {
+  background:#fff !important;color:#253247 !important;border-color:#dce4ef !important;
+}
+body.theme-light .muted, body.theme-light .intro, body.theme-light .payment-muted { color:#64748b !important; }
+body.theme-light .tabs button, body.theme-light .nav a:not(.active) {
+  background:#f1f5fb !important;color:#344563 !important;border-color:#d5dfed !important;
+}
+body.theme-light .tabs button.active, body.theme-light .nav a.active { background:#f5a623 !important;color:#241707 !important;border-color:#d99a2b !important; }
+body.theme-light .field input, body.theme-light .field select, body.theme-light .field textarea,
+body.theme-light input, body.theme-light select, body.theme-light textarea {
+  background:#fff !important;color:#253247 !important;border-color:#cbd5e1 !important;
+}
+body.theme-light th { background:#eaf0f8 !important;color:#263b59 !important; }
+body.theme-light td { color:#334155 !important;border-color:#e2e8f0 !important; }
+body.theme-light .notification-item.unread { background:#fff8e9 !important;border-color:#f0c46e !important; }
+body.theme-light .notice { background:#fff7e8 !important;color:#69470c !important;border-color:#f0d29b !important; }
+body.theme-light .btn.secondary, body.theme-light .chat-btn { background:#edf3fb !important;color:#294567 !important;border-color:#cbd8e8 !important; }
+body.theme-dark .top, body.theme-dark .nav:not(.navbar), body.theme-dark .tabs,
+body.theme-dark .notification-item, body.theme-dark .subform { background:#151b26 !important;color:#e8edf5 !important;border-color:#30394a !important; }
+body.theme-dark .hero, body.theme-dark .panel, body.theme-dark .card,
+body.theme-dark .grid>.card, body.theme-dark .table-wrap { background:#1a2230 !important;color:#e8edf5 !important;border-color:#344054 !important; }
+body.theme-dark .brand, body.theme-dark .hero h1, body.theme-dark .panel h2,
+body.theme-dark .panel h3, body.theme-dark .card h3 { color:#edf3fb !important; }
+body.theme-dark .muted, body.theme-dark .intro { color:#b8c4d6 !important; }
+body.theme-dark .tabs button, body.theme-dark .nav a:not(.active) { background:#202a3a !important;color:#dce6f5 !important;border-color:#3a475d !important; }
+body.theme-dark .tabs button.active, body.theme-dark .nav a.active { background:#f5a623 !important;color:#241707 !important;border-color:#d99a2b !important; }
+body.theme-dark th { background:#263247 !important;color:#edf3fb !important; }
+body.theme-dark td { color:#e0e7f1 !important;border-color:#30394a !important; }
+body.theme-dark .notice { background:#342916 !important;color:#ffe6af !important;border-color:#795b22 !important; }
+body.theme-dark .btn.secondary, body.theme-dark .chat-btn { background:#202b3e !important;color:#dce6f5 !important;border-color:#41516d !important; }
+body.theme-dark .payment-card { background:#171e2a !important;color:#edf2fa !important;border-color:#303b4e !important; }
